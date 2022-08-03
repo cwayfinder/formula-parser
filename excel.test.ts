@@ -69,6 +69,7 @@ describe('Excel.toHtml() end usage tests', () => {
     test('Testing parsing numbers', () => {
         expect(excel.toHtml('=EQ(./person/firstName, 1000)')).toContain('<span class=\"value\">1000</span>');
         expect(excel.toHtml('=EQ(./person/firstName, 100.25)')).toContain('<span class=\"value\">100.25</span>');
+        expect(excel.toHtml('=EQ(./person/firstName , 2)')).toContain('<span class=\"value\">2</span>');
     });
 
     test('Testing parsing arrays', () => {

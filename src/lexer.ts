@@ -84,7 +84,7 @@ export class Lexer {
     }
 
     // Tokenize VALUE token type
-    const pattern = (this.flexible) ? /^(\'.+\'?|\".+\"?|\[.+\]?|\d+\.?\d+)/ : /^(\'.+?\'|\".+?\"|\[.+?\]|\d+\.?\d+)/;
+    const pattern = (this.flexible) ? /^(\'.+\'?|\".+\"?|\[.+\]?|\d+\.?\d*)/ : /^(\'.+?\'|\".+?\"|\[.+?\]|\d+\.?\d*)/;
     const value = this.getCurrentLine().match(pattern);
     if (value) {
       this.advance(value[0].length);
